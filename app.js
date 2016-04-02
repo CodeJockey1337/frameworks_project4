@@ -106,9 +106,10 @@ app.use(function(req, res, next) {
   }
   next();
 });
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 //Ross Code********************
-app.use('/public', express.static(__dirname + "/public"));
+//app.use('/public', express.static(__dirname + "/public"));
 
 /**
  * Primary app routes.
