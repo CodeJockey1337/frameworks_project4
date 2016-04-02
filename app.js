@@ -2,6 +2,7 @@
  * Module dependencies.
  */
 var express = require('express');
+var express_handlebars = require('express-handlebars');
 var compress = require('compression');
 var session = require('express-session');
 var bodyParser = require('body-parser');
@@ -33,6 +34,10 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+
+//Ross Code ************
+var nodejsController = require('./controllers/nodejs');
+var expressjsController = require('./controllers/expressjs');
 
 /**
  * API keys and Passport configuration.
@@ -101,7 +106,9 @@ app.use(function(req, res, next) {
   }
   next();
 });
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+
+//Ross Code********************
+app.use('/public', express.static(__dirname + "/public"));
 
 /**
  * Primary app routes.
@@ -123,6 +130,11 @@ app.post('/account/profile', passportConfig.isAuthenticated, userController.post
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
+/**
+ * Code by Ross **********************
+ */
+app.get('/nodejs', nodejsController.index);
+app.get('/expressjs', expressjsController.index);
 
 /**
  * API examples routes.
