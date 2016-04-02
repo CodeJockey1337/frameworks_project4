@@ -2,7 +2,6 @@
  * Module dependencies.
  */
 var express = require('express');
-var express_handlebars = require('express-handlebars');
 var compress = require('compression');
 var session = require('express-session');
 var bodyParser = require('body-parser');
@@ -38,6 +37,12 @@ var contactController = require('./controllers/contact');
 //Ross Code ************
 var nodejsController = require('./controllers/nodejs');
 var expressjsController = require('./controllers/expressjs');
+var mongodbController = require('./controllers/mongodb');
+var classcatalogController = require('./controllers/classcatalog/classcatalog');
+var studentsController = require('./controllers/classcatalog/students');
+var professorsController = require('./controllers/classcatalog/professors');
+var sectionsController = require('./controllers/classcatalog/sections');
+var coursesController = require('./controllers/classcatalog/courses');
 
 /**
  * API keys and Passport configuration.
@@ -136,6 +141,12 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
  */
 app.get('/nodejs', nodejsController.index);
 app.get('/expressjs', expressjsController.index);
+app.get('/mongodb', mongodbController.index);
+app.get('/classcatalog/index', classcatalogController.index);
+app.get('/classcatalog/students', studentsController.index);
+app.get('/classcatalog/professors', professorsController.index);
+app.get('/classcatalog/courses', coursesController.index);
+app.get('/classcatalog/sections', sectionsController.index);
 
 /**
  * API examples routes.

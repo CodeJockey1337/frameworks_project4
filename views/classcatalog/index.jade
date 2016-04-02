@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+    img.rounded(src='/img/MSUD_header.jpg', alt='Cinque Terre')
+    h1 Welcome to the MSUD Class Catalog and Registration System!
+    p.lead The MSUD class catalog includes Students / Professors / Courses / Sections
+    hr
+    .row
+        h2 Student List
+        p
+            a.btn.btn-info(href='/classcatalog/students', role='button') View details »
+        h2 Professors List
+        p
+            a.btn.btn-info(href='/classcatalog/professors', role='button') View details »
+        h2 Courses List
+        p
+            a.btn.btn-info(href='/classcatalog/courses', role='button') View details »
+        h2 Sections List
+        p
+            a.btn.btn-info(href='/classcatalog/sections', role='button') View details »
