@@ -1,8 +1,13 @@
 extends ../layout
 
 block content
-    img.rounded(src='/img/MSUD_header.jpg', alt='Cinque Terre')
-    h1 MSUD Class Catalog - Professors
-    hr
+    img.rounded(src='/img/MSUD_header.jpg')
+    .page-header
+        h2 MSUD Class Catalog - Professors
     p
-        a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page
+        ul
+            for professor in professors
+                li= professor.first_name + ' ' + professor.last_name + ' - ' + professor.department
+    p
+    hr
+    a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page

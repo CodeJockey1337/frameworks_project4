@@ -1,13 +1,13 @@
 extends ../layout
 
 block content
-    img.rounded(src='/img/MSUD_header.jpg', alt='Cinque Terre')
+    img.rounded(src='/img/MSUD_header.jpg')
     .page-header 
         h2 MSUD Class Catalog - Students
     p
         ul
             for student in students
-                li= student.name
+                li= student.first_name + ' ' + student.last_name + ' - ' + student.student_number
     p
-    p
-        a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page
+    hr
+    a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page

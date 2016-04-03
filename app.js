@@ -43,6 +43,7 @@ var studentsController = require('./controllers/classcatalog/students');
 var professorsController = require('./controllers/classcatalog/professors');
 var sectionsController = require('./controllers/classcatalog/sections');
 var coursesController = require('./controllers/classcatalog/courses');
+var bootstrapController = require('./controllers/bootstrap');
 
 /**
  * API keys and Passport configuration.
@@ -113,8 +114,6 @@ app.use(function(req, res, next) {
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
-//Ross Code********************
-//app.use('/public', express.static(__dirname + "/public"));
 
 /**
  * Primary app routes.
@@ -147,6 +146,7 @@ app.get('/classcatalog/students', studentsController.index);
 app.get('/classcatalog/professors', professorsController.index);
 app.get('/classcatalog/courses', coursesController.index);
 app.get('/classcatalog/sections', sectionsController.index);
+app.get('/bootstrap', bootstrapController.index);
 
 /**
  * API examples routes.
