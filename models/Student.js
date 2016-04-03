@@ -6,3 +6,6 @@ var studentSchema = new mongoose.Schema({
   student_number: String,
   
 }, { timestamps: true });
+
+var Student = mongoose.model('Student', studentSchema);
+module.exports = Student;

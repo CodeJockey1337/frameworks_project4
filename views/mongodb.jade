@@ -1,8 +1,13 @@
 extends layout
 
 block content
-    img.img-thumbnail(src='/img/mongodb_header.jpg', alt='Cinque Terre', width='304', height='236')
-    h1 MongoDB
-    p MongoDB is a NoSQL database, which uses "Documents" to store object literals.  
-    p The ORM used is "Mongoose" - This translates the javascript objects into MongoDB syntax to be stored in the database.
+    .row
+        .col-md-3
+            img.img-thumbnail(src='/img/mongodb_header.jpg', width='304', height='236')
+        .col-md-9            
+            h1 MongoDB
+            p MongoDB is a NoSQL database, which uses "Documents" to store object literals.  
+            p The ORM used is "Mongoose" - This translates the javascript objects into MongoDB syntax to be stored in the database.
     hr
+    p
+        img(src='/img/mongoose.png', style='width:550px;height:700px')
