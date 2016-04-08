@@ -7,12 +7,19 @@ block content
     p
     .container
         h2 Currently Enrolled Students
-        table.table.table-striped
+        table.table-condensed.table-striped
             thead
                 tr
-                    td Student Name & ID
+                    td Student Name
+                    td Student ID #
             tbody
                 for student in students
                     tr
-                        td= student.first_name + ' ' + student.last_name + ' - ' + student.student_number
+                        td= student.first_name + ' ' + student.last_name
+                        td= student.student_number
     p
+    hr
+    a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page
+    a.btn-lg.btn-success(href='/classcatalog/createStudent', role='button') New Student Record
+    a.btn-lg.btn-warning(href='/classcatalog/editStudent', role='button') Edit Student Record
+    a.btn-lg.btn-danger(href='/classcatalog/deleteStudent', role='button') Delete Student Record

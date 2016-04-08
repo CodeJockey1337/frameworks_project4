@@ -7,11 +7,18 @@ block content
     p
     .container
         h2 Current Course List
-        table.table.table-striped
+        table.table-condensed.table-striped
             thead
                 tr
                     td Course Name
+                    td Course Code
             tbody
                 for course in courses
                     tr
-                        td= course.name + ' - ' + course.department_code + course.course_code
+                        td= course.name
+                        td= course.department_code + course.course_code
+    hr
+    a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page
+    a.btn-lg.btn-success(href='/classcatalog/createCourse', role='button') New Course Record
+    a.btn-lg.btn-warning(href='/classcatalog/editCourse', role='button') Edit Course Record
+    a.btn-lg.btn-danger(href='/classcatalog/deleteCourse', role='button') Delete Course Record

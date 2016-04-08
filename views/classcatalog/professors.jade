@@ -7,11 +7,18 @@ block content
     p
     .container
         h2 Currently Employed Professors
-        table.table.table-striped
+        table.table-condensed.table-striped
             thead
                 tr
                     td Professor Name
+                    td Professor Department
             tbody
                 for professor in professors
                     tr
-                        td= professor.first_name + ' ' + professor.last_name + ' - ' + professor.department
+                        td= professor.first_name + ' ' + professor.last_name
+                        td= professor.department
+    hr
+    a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page
+    a.btn-lg.btn-success(href='/classcatalog/createProfessor', role='button') New Professor Record
+    a.btn-lg.btn-warning(href='/classcatalog/editProfessor', role='button') Edit Professor Record
+    a.btn-lg.btn-danger(href='/classcatalog/deleteProfessor', role='button') Delete Professor Record
