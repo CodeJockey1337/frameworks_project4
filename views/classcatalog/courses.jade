@@ -1,13 +1,17 @@
-extends ../layout
+extends ../layout2
 
 block content
     img.rounded(src='/img/MSUD_header.jpg', alt='Cinque Terre')
     .page-header 
         h2 MSUD Class Catalog - Courses
     p
-        ul
-            for course in courses
-                li= course.name + ' - ' + course.department_code + course.course_code
-    p
-    hr
-    a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page
+    .container
+        h2 Current Course List
+        table.table.table-striped
+            thead
+                tr
+                    td Course Name
+            tbody
+                for course in courses
+                    tr
+                        td= course.name + ' - ' + course.department_code + course.course_code

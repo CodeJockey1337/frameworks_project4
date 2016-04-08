@@ -6,6 +6,7 @@ var studentSchema = new mongoose.Schema({
   first_name: String,
   last_name: String,
   student_number: String,
+  professors: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Professor' }]
   
 }, { timestamps: true });
 

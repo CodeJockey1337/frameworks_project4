@@ -1,12 +1,13 @@
 extends layout
 
 block content
-  h1 CS 390P - Frameworks - Project 4
-  p.lead A demo website by P. Ross Baldwin
-  p This demo website was created using the MongoDB/Express.js/Node.js/Bootstrap stack.
-  p Boilerplate provided by the "Hackathon Starter" on GitHub 
-    a(href='https://github.com/sahat/hackathon-starter') Here
-  p The critical modules of the stack are outlined below:
+  .jumbotron
+    h1 CS 390P - Frameworks - Project 4
+    p.lead A demo website by P. Ross Baldwin
+    p This demo website was created using the MongoDB/Express.js/Node.js/Bootstrap stack.
+    p Boilerplate provided by the "Hackathon Starter" on GitHub 
+      a(href='https://github.com/sahat/hackathon-starter') Here
+    p The critical modules of the stack are outlined below:
   hr
   .row
     .col-md-6
@@ -34,6 +35,7 @@ block content
           img.img-thumbnail(src='/img/mongodb_header.jpg', width='535', height='325')
         .panel-footer
           a.btn.btn-primary(href='/mongodb', role='button') View details »
+          
     .col-md-6
       .panel.panel-warning
         .panel-heading

@@ -1,13 +1,17 @@
-extends ../layout
+extends ../layout2
 
 block content
     img.rounded(src='/img/MSUD_header.jpg')
     .page-header
         h2 MSUD Class Catalog - Professors
     p
-        ul
-            for professor in professors
-                li= professor.first_name + ' ' + professor.last_name + ' - ' + professor.department
-    p
-    hr
-    a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page
+    .container
+        h2 Currently Employed Professors
+        table.table.table-striped
+            thead
+                tr
+                    td Professor Name
+            tbody
+                for professor in professors
+                    tr
+                        td= professor.first_name + ' ' + professor.last_name + ' - ' + professor.department

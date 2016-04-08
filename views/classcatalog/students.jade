@@ -1,13 +1,18 @@
-extends ../layout
+extends ../layout2
 
 block content
     img.rounded(src='/img/MSUD_header.jpg')
     .page-header 
         h2 MSUD Class Catalog - Students
     p
-        ul
-            for student in students
-                li= student.first_name + ' ' + student.last_name + ' - ' + student.student_number
+    .container
+        h2 Currently Enrolled Students
+        table.table.table-striped
+            thead
+                tr
+                    td Student Name & ID
+            tbody
+                for student in students
+                    tr
+                        td= student.first_name + ' ' + student.last_name + ' - ' + student.student_number
     p
-    hr
-    a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page
