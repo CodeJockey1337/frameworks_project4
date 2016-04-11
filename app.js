@@ -18,6 +18,8 @@ var expressValidator = require('express-validator');
 var sass = require('node-sass-middleware');
 var multer = require('multer');
 var upload = multer({ dest: path.join(__dirname, 'uploads') });
+//ROSS CODE
+var methodOverride = require('method-override');
 
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
@@ -113,6 +115,8 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+//ROSS CODE
+app.use(methodOverride('_method'));
 
 
 /**
@@ -141,12 +145,19 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 app.get('/nodejs', nodejsController.index);
 app.get('/expressjs', expressjsController.index);
 app.get('/mongodb', mongodbController.index);
-app.get('/classcatalog/index', classcatalogController.index);
-app.get('/classcatalog/students', studentsController.index);
-app.get('/classcatalog/professors', professorsController.index);
-app.get('/classcatalog/courses', coursesController.index);
-app.get('/classcatalog/sections', sectionsController.index);
 app.get('/bootstrap', bootstrapController.index);
+app.get('/classcatalog/index', classcatalogController.index);
+app.get('/classcatalog/sections', sectionsController.index);
+app.get('/classcatalog/professors', professorsController.index);
+app.get('/classcatalog/createprofessor', professorsController.create);
+app.post('/classcatalog/createprofessor', professorsController.post);
+app.get('/classcatalog/courses', coursesController.index);
+app.get('/classcatalog/createcourse', coursesController.create);
+app.post('/classcatalog/createcourse', coursesController.post);
+app.get('/classcatalog/students', studentsController.index);
+app.get('/classcatalog/createstudent', studentsController.create);
+app.post('/classcatalog/createstudent', studentsController.post);
+
 
 /**
  * API examples routes.

@@ -1,0 +1,24 @@
+extends ../layout2
+
+block content
+  .page-header
+    h3 Create New Course Offering
+  form.form-horizontal(id='createcourse-form', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label(for='name') Course Name
+      .col-sm-7
+        input.form-control(type='text', name='name', id='name', placeholder='ex. Frameworks', autofocus, required)
+    .form-group
+      label.col-sm-3.control-label(for='department_code') Department Code
+      .col-sm-7
+        input.form-control(type='text', name='department_code', id='department_code', placeholder='ex. CS', required)
+    .form-group
+      label.col-sm-3.control-label(for='course_code') Course Code
+      .col-sm-7
+        input.form-control(type='text', name='course_code', id='course_code', placeholder='ex. 390P', required)
+    .form-group
+      .col-sm-offset-3.col-sm-7
+        button.btn.btn-success(type='submit')
+          i.fa.fa-user-plus
+          | Save New Course
