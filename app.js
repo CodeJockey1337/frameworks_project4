@@ -36,7 +36,7 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
-//Ross Code ************
+//Added Code ************
 var nodejsController = require('./controllers/nodejs');
 var expressjsController = require('./controllers/expressjs');
 var mongodbController = require('./controllers/mongodb');
@@ -115,7 +115,7 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
-//ROSS CODE
+//ADDED CODE
 app.use(methodOverride('_method'));
 
 
@@ -140,7 +140,7 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 /**
- * Code by Ross **********************
+ * ADDED CODE **********************
  */
 app.get('/nodejs', nodejsController.index);
 app.get('/expressjs', expressjsController.index);

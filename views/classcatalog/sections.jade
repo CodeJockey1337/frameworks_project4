@@ -1,9 +1,18 @@
 extends ../layout2
 
 block content
-    img.rounded(src='/img/MSUD_header.jpg', alt='Cinque Terre')
-    h1 MSUD Class Catalog - Sections
-    
+    img.rounded(src='/img/MSUD_header.jpg')
+    .page-header 
+        h2 MSUD Class Catalog - Sections
+    p
+    .container
+        h2 Current Class Sections List
+        table.table-condensed.table-striped
+            thead
+                tr
+                    td Course Name
+                    td Professor Name
+    p
     hr
     a.btn-lg.btn-info(href='/classcatalog/index', role='button') Main Page
     a.btn-lg.btn-success(href='/classcatalog/createSection', role='button') New Section Record

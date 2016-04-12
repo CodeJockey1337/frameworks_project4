@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var courseSchema = new mongoose.Schema({
   name: String,
   department_code: String,
-  course_code: String,
+  course_code: String
   
 }, { timestamps: true });
 
@@ -17,7 +17,7 @@ Course.create(
   { 
     name: 'Frameworks', 
     department_code: 'CS', 
-    course_code: '390P' 
+    course_code: '390P'
   },
   {
     name: 'Computer Science 1',
