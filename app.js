@@ -148,6 +148,7 @@ app.get('/mongodb', mongodbController.index);
 app.get('/bootstrap', bootstrapController.index);
 app.get('/classcatalog/index', classcatalogController.index);
 app.get('/classcatalog/sections', sectionsController.index);
+app.get('/classcatalog/createsection', sectionsController.create);
 app.get('/classcatalog/professors', professorsController.index);
 app.get('/classcatalog/createprofessor', professorsController.create);
 app.post('/classcatalog/createprofessor', professorsController.post);

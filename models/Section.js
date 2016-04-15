@@ -2,20 +2,14 @@
 
 var mongoose = require('mongoose');
 
+var Schema = mongoose.Schema;
+
 var sectionSchema = new mongoose.Schema({
-  course_id: String,
-  professor_id: String,
-  _id : String
+  course : [{type: Schema.ObjectId, ref : 'Course' }],
+  professor : [{type : Schema.ObjectId, ref : 'Professor'}],
+  section_number : Number
   
 }, { timestamps: true });
 
 var Section = mongoose.model('Section', sectionSchema);
 module.exports = Section;
-
-Section.create(
-    {
-        course_id : '1',
-        professor_id : '1',
-        _id : '1'
-    }
-);

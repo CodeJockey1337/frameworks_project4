@@ -6,7 +6,7 @@ var studentSchema = new mongoose.Schema({
   first_name: String,
   last_name: String,
   student_number: String
-  //professors: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Professor' }]
+  
 }, { timestamps: true });
 
 var Student = mongoose.model('Student', studentSchema);
@@ -17,7 +17,7 @@ Student.create(
     { 
         first_name: 'Ross', 
         last_name: 'Baldwin', 
-        student_number: '900418205'
+        student_number: 900418205
     },
     {
         first_name: 'Eddard',
